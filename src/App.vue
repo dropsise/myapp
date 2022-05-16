@@ -1,26 +1,48 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <header-view/>
+  <router-view/>
 </template>
 
-<script>
-import HelloWorld from './components/HelloWorld.vue'
-
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+<script setup>
+import { HeaderView } from '@/views';
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+<style lang="scss">
+/*========== VARIABLES ==========*/
+@use '@/assets/styles' as *;
+/*========== GOOGLE FONTS `Poppins` ==========*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+/*========== BASE ==========*/
+::-webkit-scrollbar { display: none; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html {
+  scroll-behavior: smooth;
+  body {
+    font-family: $font-body-font;
+    font-size: $size-m;
+    color: $color-text;
+    background-color: $color-body;
+    h1,h2,h3 { font-weight: $font-medium; color: $color-title; }
+    ul { list-style: none; }
+    // a { text-decoration: none; } /* on utilise <router-link class="link"> pour les liens
+    .link { text-decoration: none; color: $color-text; }
+    button { @extend input; cursor: pointer; }
+    input { border: none; outline: none; background: none; }
+    img { max-width: 100%; height: auto; object-fit: cover; }
+    main { overflow: hidden; }
+    section { 
+      padding: 2*$size-xxl 0 $size-xxl 0;
+      .title { 
+        margin-bottom: $size-biggest/2; 
+        text-align: center;
+        font-size: $size-biggest;  
+      } 
+    }
+    .container { 
+      max-width: $size-max-width;
+      margin: 0 $size-xl;
+    }
+  }
 }
 </style>
