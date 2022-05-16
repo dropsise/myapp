@@ -20,7 +20,7 @@ html {
   scroll-behavior: smooth;
   body {
     font-family: $font-body-font;
-    font-size: $size-m;
+    font-size: $size-s;
     color: $color-text;
     background-color: $color-body;
     h1,h2,h3 { font-weight: $font-medium; color: $color-title; }
